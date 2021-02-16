@@ -1,0 +1,56 @@
+﻿@model IEnumerable<JdepazExcel.Models.MarcasEmpresa>
+
+@{
+    ViewData["Title"] = "Marcas Por Empresas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Marcas por Empresas</h1>
+
+<p>
+    <a asp-action="Create">Asignar Marcas</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Empresa
+            </th>
+            <th>
+               Sucursal
+            </th>
+            <th>
+                Marca
+            </th>
+            <th>
+                Detalles
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoEmpresaNavigation.NombreEmpresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoSucursalNavigation.NombreSucursal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoMarcaNavigation.NombreMarca)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Detalles)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">ver</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

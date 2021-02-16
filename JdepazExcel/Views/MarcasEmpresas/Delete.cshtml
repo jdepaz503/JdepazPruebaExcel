@@ -1,0 +1,45 @@
+﻿@model JdepazExcel.Models.MarcasEmpresa
+
+@{
+    ViewData["Title"] = "Eliminar Marca de Empresa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3>¿Seguro/a que quiere elimnar este registro?</h3>
+<div>
+    <h4>MarcasEmpresa</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Empresa
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodigoEmpresaNavigation.NombreEmpresa)
+        </dd>
+        <dt class="col-sm-2">
+            Sucursal
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodigoSucursalNavigation.NombreSucursal)
+        </dd>
+        <dt class="col-sm-2">
+            Marca
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodigoMarcaNavigation.NombreMarca)
+        </dd>
+        <dt class="col-sm-2">
+            Detalles
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Detalles)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

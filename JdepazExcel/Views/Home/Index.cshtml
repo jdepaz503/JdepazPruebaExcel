@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+@model LoginViewModel
+
+
+<center>
+    <h5>Este es el examen de:  Johnny Antonio De Paz Castellanos, desarrollado en .net core 3.0</h5>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-12">
+                <section>
+                    <form asp-controller="Login" asp-action="Login" method="post">
+                        <h4>Iniciar Sesión</h4>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group text-left">
+                            <label asp-for="User"></label>
+                            <input asp-for="User" class="form-control" />
+                            <span asp-validation-for="User" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-left">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+
+</center>
